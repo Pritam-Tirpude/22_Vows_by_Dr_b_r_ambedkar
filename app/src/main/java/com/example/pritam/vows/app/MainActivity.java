@@ -2,6 +2,7 @@ package com.example.pritam.vows.app;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -54,12 +55,21 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
+        int id = item.getItemId();
 //
 //        //noinspection SimplifiableIfStatement
 //        if (id == R.id.action_settings) {
 //            return true;
 //        }
+
+        if (id == R.id.action_about) {
+            AlertDialog.Builder alertDBuilder = new AlertDialog.Builder(this, R.style.AppCompatAlertDialog);
+            alertDBuilder.setTitle("About");
+            alertDBuilder.setMessage("Design and developed by Pritam Tirpude" + "\n\n" + "Website : 22vows.getforge.io"
+                    + "\n\n" + "Copyright" + "\u00A9"+"2015");
+            alertDBuilder.setPositiveButton("OK", null);
+            alertDBuilder.show();
+        }
 
         return super.onOptionsItemSelected(item);
     }
